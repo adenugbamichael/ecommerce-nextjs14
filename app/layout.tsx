@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
-import { Lato } from "next/font/google"
+import { Merriweather_Sans } from "next/font/google"
 import "./globals.css"
 import Navbar from "./components/Navbar"
 
-const lato = Lato({ weight: "400", subsets: ["latin"] })
+const Merriweather = Merriweather_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={lato.className}>
+      <body className={Merriweather.className}>
         <Navbar />
         {children}
       </body>
