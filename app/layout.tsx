@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Merriweather_Sans } from "next/font/google"
 import "./globals.css"
 import Navbar from "./components/Navbar"
+import CartProvider from "./components/Providers"
 
 const Merriweather = Merriweather_Sans({ subsets: ["latin"] })
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={Merriweather.className}>
-        <Navbar />
-        {children}
+        <CartProvider>
+          <Navbar />
+          {children}
+        </CartProvider>
       </body>
     </html>
   )
