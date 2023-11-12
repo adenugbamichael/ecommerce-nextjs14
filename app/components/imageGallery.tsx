@@ -23,8 +23,8 @@ export default function ImageGallery({ images }: iAppProps) {
               src={urlFor(image).url()}
               width={200}
               height={200}
-              priority
               alt='photo'
+              priority
               className='h-full w-full object-cover object-center cursor-pointer'
               onClick={() => handleSmallImageClick(image)}
             />
