@@ -21,17 +21,17 @@ export default function ShoppingCartModal() {
     redirectToCheckout,
   } = useShoppingCart()
 
-  // async function handleCheckoutClick(event: any) {
-  //   event.preventDefault()
-  //   try {
-  //     const result = await redirectToCheckout()
-  //     if (result?.error) {
-  //       console.log("result")
-  //     }
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+  async function handleCheckoutClick(event: any) {
+    event.preventDefault()
+    try {
+      const result = await redirectToCheckout()
+      if (result?.error) {
+        console.log("result")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent className='sm:max-w-lg w-[90vw]'>
@@ -100,10 +100,7 @@ export default function ShoppingCartModal() {
             </p>
 
             <div className='mt-6'>
-              <Button
-                // onClick={handleCheckoutClick}
-                className='w-full'
-              >
+              <Button onClick={handleCheckoutClick} className='w-full'>
                 Checkout
               </Button>
             </div>
